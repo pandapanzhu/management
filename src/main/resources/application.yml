@@ -1,0 +1,15 @@
+spring:
+  mvc:
+    favicon:
+      enabled: false
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate.temp.use_jdbc_metadata_defaults: false
+      hibernate:
+        format_sql: true
+    open-in-view: true
+  profiles:
+    active: dev
