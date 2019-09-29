@@ -19,6 +19,10 @@ public class Login extends BaseEntity{
 
     private String password;
 
+    /**
+     * 重置密码需他们点击链接进来，并校验重置码是否正确
+     */
+    private String resetString;
 
 
 }

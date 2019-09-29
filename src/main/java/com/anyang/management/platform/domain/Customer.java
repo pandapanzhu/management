@@ -16,6 +16,10 @@ public class Customer extends BaseEntity{
 
     private String name;
 
+    private String mobile;
+
+    private String email;
+
     private String loginId;
 
 }
