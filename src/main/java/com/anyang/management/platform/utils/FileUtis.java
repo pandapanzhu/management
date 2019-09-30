@@ -4,6 +4,7 @@ package com.anyang.management.platform.utils;
 import com.alibaba.fastjson.JSONObject;
 import com.anyang.management.platform.domain.Entities;
 import com.anyang.management.platform.domain.JhipsterEntity;
+import com.anyang.management.platform.domain.JhipsterFiled;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
@@ -30,12 +31,15 @@ public  class FileUtis {
             String name  =".jhipster/"+fileName+entities.getTableName()+".json";
             //这里不能直接把object传进去，应该进行一些修改之后传个JSON过去
             //这里需要用到映射去解析模板文件了
-            List<JhipsterEntity.JhipsterFiled> filedList = new ArrayList<>();
+            List<JhipsterFiled> filedList = new ArrayList<>();
             Field[] fileds = entities.getClass().getDeclaredFields();
             //将Fileds转换成fildList
             for(Field filed : fileds){
+                JhipsterFiled filed1 = new JhipsterFiled();
+                filed1.setFieldType("");
                 filed.getType();
                 filed.getName();
+                filedList.add(filed1);
             }
 
 
@@ -64,7 +68,12 @@ public  class FileUtis {
     }
 
     public static boolean runCMD(String cmd) throws IOException, InterruptedException {
+
         String filePath= staticFilesWin;
+        String os = System.getProperty("os.name");
+        if(!os.contains("win")){
+            filePath= staticFilesLinux;
+        }
 
         final String METHOD_NAME = "runCMD";
         Process p = Runtime.getRuntime().exec(cmd,null,new File(filePath));//这里的file应该是指定到对应的目录

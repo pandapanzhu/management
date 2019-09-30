@@ -1,15 +1,28 @@
 spring:
+  application:
+    name: management
   mvc:
     favicon:
       enabled: false
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:mysql://localhost:3306/management?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
   jpa:
+    open-in-view: true
     properties:
       hibernate.temp.use_jdbc_metadata_defaults: false
       hibernate:
         format_sql: true
-    open-in-view: true
+
   profiles:
     active: dev

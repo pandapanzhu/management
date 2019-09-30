@@ -49,13 +49,4 @@ public class JhipsterEntity {
 
     }
 
-
-    public class JhipsterFiled{
-        private String fieldName;
-
-        private String fieldType;
-
-        private List fieldValidateRules;
-    }
-
 }
