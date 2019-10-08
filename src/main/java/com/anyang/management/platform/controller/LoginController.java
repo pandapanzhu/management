@@ -12,7 +12,8 @@ import javax.annotation.Resource;
 /**
  * 登录业务
  */
-@RestController("login")
+@RestController
+@RequestMapping("login")
 public class LoginController {
 
     @Resource

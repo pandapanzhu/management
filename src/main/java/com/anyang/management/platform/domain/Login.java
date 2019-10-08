@@ -3,6 +3,11 @@ package com.anyang.management.platform.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+import javax.persistence.Id;
 
 /**
  * 登录信息
@@ -11,8 +16,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EntityListeners(AuditingEntityListener.class)
+@Entity
 public class Login extends BaseEntity{
-
+    @Id
     private Long id;
 
     private String loginName;

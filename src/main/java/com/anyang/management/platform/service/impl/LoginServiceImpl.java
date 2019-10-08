@@ -29,7 +29,7 @@ public class LoginServiceImpl implements LoginService {
            jsonObject.put("msg","登录名不正确");
            return jsonObject;
        }
-        Login login1 = loginRepository.getLoginByLoginNameEqualsAAndAndPassword(login.getLoginName(),login.getPassword());
+        Login login1 = loginRepository.getLoginByLoginNameEqualsAndAndPassword(login.getLoginName(),login.getPassword());
        if(!ObjectUtils.isEmpty(login1)){ //不为空，证明登录成功
            jsonObject.put("msg","success");
            return jsonObject;
@@ -40,6 +40,8 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public JSONObject logout() {
-        return null;
+        JSONObject jsonObject =new JSONObject();
+        jsonObject.put("msg","success");
+        return jsonObject;
     }
 }

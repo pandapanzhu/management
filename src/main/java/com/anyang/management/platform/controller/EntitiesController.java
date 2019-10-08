@@ -5,21 +5,16 @@ import com.anyang.management.platform.domain.Entities;
 import com.anyang.management.platform.service.EntitiesService;
 import com.anyang.management.platform.utils.FileUtis;
 import com.anyang.management.platform.utils.PageUtils;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
 import java.time.Instant;
 import java.util.List;
 
-@RestController("entities")
+@RestController
+@RequestMapping("entities")
 public class EntitiesController {
 
     @Resource
@@ -39,7 +34,7 @@ public class EntitiesController {
 
 
     @GetMapping("getAll")
-    public Page getEntities(@RequestBody PageUtils page){
+    public Page getEntities(@RequestBody(required = false) PageUtils page){
         Page pages = entitiesService.getAll(page);
         return pages;
     }

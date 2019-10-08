@@ -28,7 +28,7 @@ public  class FileUtis {
          * 并返回文件夹的名称
          */
         for(Entities entities :entitiesList){
-            String name  =".jhipster/"+fileName+entities.getTableName()+".json";
+            String name  =".jhipster/"+fileName+entities.getEntityName()+".json";
             //这里不能直接把object传进去，应该进行一些修改之后传个JSON过去
             //这里需要用到映射去解析模板文件了
             List<JhipsterFiled> filedList = new ArrayList<>();
@@ -43,7 +43,7 @@ public  class FileUtis {
             }
 
 
-            JhipsterEntity jhipsterEntity =new JhipsterEntity(filedList,entities.getTableName());
+            JhipsterEntity jhipsterEntity =new JhipsterEntity(filedList,entities.getEntityName());
 
 
 
