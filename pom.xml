@@ -38,11 +38,11 @@
 
 
     <properties>
-        <spring.boot.version>2.1.1.RELEASE</spring.boot.version>
-        <spring.security.version>5.1.5.RELEASE</spring.security.version>
+        <spring.boot.version>2.7.1</spring.boot.version>
         <spring.data.jpa.version>2.1.10.RELEASE</spring.data.jpa.version>
         <hibernate.version>5.4.0.Final</hibernate.version>
         <lombok.version>1.18.4</lombok.version>
+        <fastjson.version>2.0.8</fastjson.version>
     </properties>
 
     <parent>
@@ -154,12 +154,10 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
-            <version>${spring.security.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
-            <version>${spring.security.version}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -179,7 +177,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.51</version>
+            <version>${fastjson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.zaxxer</groupId>
