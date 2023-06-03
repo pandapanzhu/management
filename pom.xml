@@ -38,7 +38,7 @@
 
 
     <properties>
-        <spring.boot.version>2.7.1</spring.boot.version>
+        <spring.boot.version>2.7.12</spring.boot.version>
         <spring.data.jpa.version>2.1.10.RELEASE</spring.data.jpa.version>
         <hibernate.version>6.0.23.Final</hibernate.version>
         <lombok.version>1.18.4</lombok.version>
